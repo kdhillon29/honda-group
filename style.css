@@ -162,3 +162,10 @@ margin-bottom: 0;
   background-color: green !important;
 }
 
+.remove-task{
+  color: green;
+  transform: translateX(-100vw);
+}
+.card{
+  transition : all ease-in .5s;
+}

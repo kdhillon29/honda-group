@@ -25,18 +25,27 @@ function addButtonEventListener(buttonClass) {
 
   tasks.forEach(task => {
     let id = task.getAttribute('id');
-
     task.addEventListener('click', (event) => {
       console.log('click: ' + JSON.stringify(event));
       console.log("Id: " + id);
       if (buttonClass == '.taskId')
-        TaskManager.updateStatus(id);
-      else if (buttonClass == '.taskId1')
-        TaskManager.deleteTask(id);
+      TaskManager.updateStatus(id);
+      else if (buttonClass == '.taskId1'){
+
+      let parent=  task.parentNode.parentElement;
+      parent.classList.add('remove-task');
+      
+      setTimeout(()=>{
+        parent.remove()
+        //  TaskManager.deleteTask(id);
+      }
+        ,500);
+      
+      }
     });
   });
 
-  console.log(tasks);
+ // console.log(tasks);
 }
 
 const openForm = document.getElementById("addTask");
@@ -99,7 +108,7 @@ function filterTasks() {
     document.getElementById("list-items").innerHTML = ''
     displayTasks()
     addButtonEventListener('.taskId'); //mark as done tasks
-  addButtonEventListener('.taskId1'); //delete tasks
+    addButtonEventListener('.taskId1'); //delete tasks
   })
 }
 

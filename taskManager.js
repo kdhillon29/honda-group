@@ -98,7 +98,7 @@ class TaskManager {
     let status = (item._status == 'done') ? true : false;
 
     console.log("Status: " + status + " ," + item._status);
-    let itemHTML = '<div class="card" style="width: 100%;">\n' +
+    let itemHTML = '<div class="card" style="width: 100%; ">\n' +
       '        <div class="card-body">\n' +
       '        <h5 class="card-title taskNameJs text-primary" >' + item._taskName + '</h5>\n' +
       '        <p class="card-text font-weight-bold assigned-to">' + 'Assigned to: ' + item._assignTo + '</p>\n' +
